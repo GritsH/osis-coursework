@@ -12,12 +12,10 @@ import java.util.Iterator;
 public class LossyCompression {
 
     public void compressImage(String imagePath) throws IOException {
-        String[] splitedPath = imagePath.split("([a-zA-Z]:)?(\\\\[a-zA-Z0-9_.-]+)+\\\\?");
-        String compressedImageName = splitedPath[splitedPath.length - 1];
         File input = new File(imagePath);
         BufferedImage image = ImageIO.read(input);
 
-        File compressedImageFile = new File("compressed_" + compressedImageName);
+        File compressedImageFile = new File("compressedImage.jpg");
         OutputStream os =new FileOutputStream(compressedImageFile);
 
         Iterator<ImageWriter> writers =  ImageIO.getImageWritersByFormatName("jpg");
@@ -29,7 +27,7 @@ public class LossyCompression {
         ImageWriteParam param = writer.getDefaultWriteParam();
 
         param.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
-        param.setCompressionQuality(0.5f);
+        param.setCompressionQuality(0.2f);
         writer.write(null, new IIOImage(image, null, null), param);
 
         os.close();
