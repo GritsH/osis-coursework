@@ -1,6 +1,7 @@
+import by.grits.imageCompression.LossyCompressor;
 import by.grits.videoCompression.VideoCompressor;
 import io.github.techgnious.exception.VideoException;
-import main.java.by.grits.imageCompression.LossyCompressor;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -12,8 +13,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         System.out.println("Enter path to the image: ");
         String path = scanner.nextLine();
-//        LossyCompressor lossyCompressor = new LossyCompressor();
-//        lossyCompressor.compressImage(path);
+        LossyCompressor lossyCompressor = new LossyCompressor();
+        lossyCompressor.compressImage(path);
         VideoCompressor videoCompressor = new VideoCompressor();
         videoCompressor.compressVideo(path);
     }
