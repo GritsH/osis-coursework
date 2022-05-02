@@ -9,13 +9,13 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Iterator;
 
-public class LossyCompressor {
+public class ImageLossyCompressor {
 
     public void compressImage(String imagePath) throws IOException {
         File input = new File(imagePath);
         BufferedImage image = ImageIO.read(input);
 
-        File compressedImageFile = new File("compressedImage.jpg");
+        File compressedImageFile = new File("D:\\Testing\\Custome\\compressedImage.jpg");
         OutputStream os =new FileOutputStream(compressedImageFile);
 
         Iterator<ImageWriter> writers =  ImageIO.getImageWritersByFormatName("jpg");

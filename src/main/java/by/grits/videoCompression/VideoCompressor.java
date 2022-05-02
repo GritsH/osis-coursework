@@ -13,9 +13,6 @@ public class VideoCompressor {
 
     public void compressVideo(String videoPath) throws IOException, VideoException {
         IVCompressor compressor = new IVCompressor();
-        IVSize customRes = new IVSize();
-        customRes.setWidth(400);
-        customRes.setHeight(300);
         File file = new File(videoPath);
         compressor.reduceVideoSizeAndSaveToAPath(file, VideoFormats.MP4, ResizeResolution.R480P, "D:/Testing/Custome");
     }
