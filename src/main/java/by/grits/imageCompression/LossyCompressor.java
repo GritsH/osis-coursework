@@ -1,4 +1,4 @@
-package imageCompression;
+package by.grits.imageCompression;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Iterator;
 
-public class LossyCompression {
+public class LossyCompressor {
 
     public void compressImage(String imagePath) throws IOException {
         File input = new File(imagePath);
