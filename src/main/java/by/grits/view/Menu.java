@@ -5,7 +5,6 @@ import by.grits.imageCompression.ImageLossyCompressor;
 import by.grits.videoCompression.VideoCompressor;
 import io.github.techgnious.exception.VideoException;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
