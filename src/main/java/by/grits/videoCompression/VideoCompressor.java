@@ -7,14 +7,22 @@ import io.github.techgnious.dto.VideoFormats;
 import io.github.techgnious.exception.VideoException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class VideoCompressor {
 
-    public void compressVideo(String videoPath) throws IOException, VideoException {
-        IVCompressor compressor = new IVCompressor();
-        File file = new File(videoPath);
-        compressor.reduceVideoSizeAndSaveToAPath(file, VideoFormats.MP4, ResizeResolution.R480P, "D:/Testing/Custome");
+    public void compressVideo(String videoPath) {
+        try {
+            IVCompressor compressor = new IVCompressor();
+            File file = new File(videoPath);
+            compressor.reduceVideoSizeAndSaveToAPath(file, VideoFormats.MP4, ResizeResolution.R480P, "D:/Testing/Custome");
+        } catch (VideoException e) {
+            System.out.println("Cannot compress video\n");
+        } catch (IOException e) {
+            System.out.println("Smth wrong with the video, try another one\nOr wrong path input\n");
+        }
+
     }
 
 }
