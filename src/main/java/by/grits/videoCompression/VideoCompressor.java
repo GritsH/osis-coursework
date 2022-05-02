@@ -16,7 +16,7 @@ public class VideoCompressor {
         try {
             IVCompressor compressor = new IVCompressor();
             File file = new File(videoPath);
-            compressor.reduceVideoSizeAndSaveToAPath(file, VideoFormats.MP4, ResizeResolution.R480P, "D:/Testing/Custome");
+            compressor.reduceVideoSizeAndSaveToAPath(file, VideoFormats.MP4, ResizeResolution.R480P, "Compressed");
         } catch (VideoException e) {
             System.out.println("Cannot compress video\n");
         } catch (IOException e) {
