@@ -16,7 +16,7 @@ public class ImageLossyCompressor {
             File input = new File(imagePath);
             BufferedImage image = ImageIO.read(input);
 
-            File compressedImageFile = new File("Compressed\\compressedImage.jpg");
+            File compressedImageFile = new File("Compressed\\"+input.getName());
             OutputStream os =new FileOutputStream(compressedImageFile);
 
             Iterator<ImageWriter> writers =  ImageIO.getImageWritersByFormatName("jpg");
